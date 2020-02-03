@@ -23,7 +23,7 @@
                 <nav class="navbar navbar-expand bg-white">
                     <div class="row">
                         <div id="logo">
-                            <a href="Home.html"><img src="{% static 'pic/Weblogo.png' %}" alt = "Logo of Tech Shop"></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'pic/Weblogo.png' %}" alt = "Logo of Tech Shop"></a>
                         </div>
                         <div class="right">
                             <ul class="navbar-nav">
@@ -40,10 +40,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" href="About.html">About us</a>
                                 </li>
+                                {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="{% url 'logout' %}">Log Out</a>
+                                </li>
+                                {% else %}
                                 
                                 <li class="nav-item">
                                 <a class = "nav-link" id = "login" href="{% url 'login' %}"><img src="{% static 'pic/usericon.png' %}" alt="login"></a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -52,6 +58,13 @@
                 
                 <hr class="line">
             </div>
+        </div>
+        <div>
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
         </div>
 
         {% block content %}
@@ -71,6 +84,8 @@
             <span><p>Free Ship All Over Nepal</p></span>
         </div> 
     </body>
+    
+    <!-- <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> -->
+    <script src="{% static 'FormValidation.js' %}"></script>
     <script src=" {% static 'animation.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </html>

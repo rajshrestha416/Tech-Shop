@@ -18,11 +18,10 @@ var form = document.getElementById('form');
 var firstname = document.getElementById("firstname");
 var lastname = document.getElementById("lastname");
 var email = document.getElementById("email");
-var password = document.getElementById("pwd");
-var cpassword = document.getElementById("cpwd"); 
+var password = document.getElementById("password");
+var cpassword = document.getElementById("cpassword"); 
 
 form.addEventListener('submit'||'click' , (e)=> {
-    e.preventDefault();
     checkInput();
     console.log()
 });

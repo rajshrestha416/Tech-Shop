@@ -1,19 +1,20 @@
 
 {% extends 'base.html' %}
 {% block title %}
-    Second Hand
+    Login
 {% endblock %}
 {% block content %}
     <div id = "login">
         <h4>Create Account</h4>
-        <form id = "form" action="/Home.html" method="POST">
+        <form id = "form" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
             <div class="form-group">
-                <label for = "email"> Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter Email">
+                <label for = "username"> Username:</label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="username">
             </div>
             <div class="form-group">
                 <label for = "pwd"> Password:</label>
-                <input type="password" class="form-control" placeholder="Enter Password">
+                <input type="password" class="form-control" placeholder="Enter Password" name="password">
             </div>
             
             <input type="submit" class = "btn btn-dark" name ="Login" value="Login">
