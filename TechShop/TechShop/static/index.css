@@ -1,0 +1,272 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    color: #606060;
+    font-size: 16px;
+}
+.header-span span{
+    text-align: center !important;
+    font-size: 0.94em !important;
+}
+
+.header-span p{
+    margin: 0px !important;
+}
+.nav_container{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.navbar{
+    display: block;
+    max-width: 90%;
+    margin-left: 5%;
+    font-size: 20px !important;
+    border-style: solid;
+    border-width: 3px 0px 3px 0px;
+    border-color: #E0E0E0;
+}
+.navbar-nav .nav-item a{    
+    color: #606060 !important;
+}
+
+#login img{
+    max-width: 30px;
+}
+
+.navbar-expand .navbar-nav .nav-link{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+#logo img{
+    width: 100px;
+}
+
+.search-box{
+    width: 250px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #9ab4ce;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.right{
+    margin-top: -55px;
+    float: right;
+}
+.row{
+    display: block !important;
+}
+#search{
+    padding-top: 5px;
+}
+#search button{
+    margin-left:-45px ;
+}
+.nav-item button {
+    vertical-align: inherit;
+}
+
+.Container h4{
+    margin-left:5% !important;
+}
+.Trending{
+    max-width: 90%;
+    height: 400px;
+    color: #606060;
+    display: flex;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+.Trending .Contents{
+    float: left;
+} 
+
+
+footer{
+    display: block;
+    border-style: solid;
+    border-width: 4px 0px 0px 0px;
+    border-color: #E0E0E0;
+}
+
+.foot img{
+    width: 100px;
+}
+
+.foot{
+    text-align: center;
+    width: 100%;
+}
+
+hr.line{
+    border-top: 3px solid #E0E0E0;
+  }
+
+.Content{
+    display: flex;
+}
+
+.Products{
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.Products .products{
+    width: 30%;
+    height: 400px;
+    float: left;
+    margin: 1.5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.products img{
+    width: 100%;
+    height: 75%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+
+
+
+  /* animation
+  .Image{
+      display: flex;
+  }
+  .Image img{
+    height: 400px;
+    width: 100%;
+    max-width: 100%;
+  }
+.items{
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+} */
+
+
+/* Login */
+#registerform{
+    max-width: 30%;
+    margin-right: 35%;
+    margin-left: 35%;
+}
+#registerform h1{
+    text-align: left;
+}
+
+#registerform .form-group{
+    position: relative !important;
+    margin-bottom:0px !important;
+}
+.form-group i{
+    position: absolute;
+    visibility: hidden;
+    top: 40px;
+    right: 10px;
+}
+.form-group small{
+    visibility: hidden;
+}
+.form-group .success i.fa-check-circle{
+    color: #2ecc2e;
+    visibility: visible;
+}
+.form-group .error i.fa-exclamation-circle{
+    color: #e74c3e;
+    visibility: visible;
+}
+
+.form-group .success .form-control{
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #2ecc2e;
+}
+
+.form-group .error .form-control{
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #e74c3e;
+}
+.form-group .error small{
+    color: #e74c3e;
+    visibility: visible;
+}
+ .form-group .success small{
+    visibility: hidden;
+} 
+
+#login h1{
+    text-align: left;
+}
+#login{
+    max-width: 30%;
+    margin-right: 35%;
+    margin-left: 35%;
+    margin-bottom: 10px;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 1100px){
+    .navbar{
+        max-width: 100%;
+        margin: 0px;
+    }
+    .navbar{
+        font-size: 18px !important;
+    }
+}
+
+ @media screen and (max-width: 950px){
+    .nav_container{
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .navbar {
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 18px !important;
+    }
+
+    .Products .products{
+        width: 40%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+}
+
+
+
+
+
+/*About Us*/
+/* #aboutus{
+    background-image: url(pic/AboutUs.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    margin-top: 15px;
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+} */
+#aboutus{
+    padding-left:10%;
+    padding-right:10%;
+    font-size: 20px !important;
+}

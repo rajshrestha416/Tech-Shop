@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block title %}
+    Second Hand
+{% endblock %}
+{% block content %}
+    <div id = "login">
+        <h4>Create Account</h4>
+        <form id = "form" action="/Home.html" method="POST">
+            <div class="form-group">
+                <label for = "email"> Email address:</label>
+                <input type="email" class="form-control" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label for = "pwd"> Password:</label>
+                <input type="password" class="form-control" placeholder="Enter Password">
+            </div>
+            
+            <input type="submit" class = "btn btn-dark" name ="Login" value="Login">
+            <p>Don't have accout <a href="{% url 'register' %}">Create one</a> </p>
+        </form>
+    </div>
+{% endblock %}

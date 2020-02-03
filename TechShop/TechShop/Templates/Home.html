@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+    <div class="Container">
+        <h4> Trending Today </h4>
+        <div class = "Trending container-fluid">
+            <div class="Content">
+                
+            </div>
+                
+        </div>
+        <br>
+        <br>
+
+        <h4> New Products</h4>
+        <div class = "Products">
+            {%for products in products %}
+            <div class="products" onclick="">
+                <img src = "{{products.Image.url}}" alt="product's Desc">
+                <p>{{products.ProductName}}</p>
+                <p> ${{products.Price}}</p>
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+{% endblock %}
