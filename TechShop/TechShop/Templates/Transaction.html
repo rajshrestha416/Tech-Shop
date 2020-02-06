@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Cart
+{% endblock %}
+{% block content %}
+<div class="transaction">
+
+</div>
+<table class="table table-striped">
+    <thead class="thead-dark"  scope="col">
+        <th>Image</th>
+        <th>ProductName</th>
+        <th>Price</th>
+        <th>Description</th> 
+        <th>Action</th>
+    </thead>
+
+    
+    {% for product in products %} 
+        <tr>
+            <tbody>
+                {% load static %}
+                <td><img class="rounded" width="40" src="{{product.Image.url}}" /></td>
+                <td>{{product.ProductName}}</td>
+                <td>{{product.Price}}</td>
+                <td>{{product.Description}}</td>
+
+
+                <td><a href="{% url 'edit' product.id %}">Edit</a>||<a href="{% url 'delete' product.id %}">Delete</a></td>
+            </tbody>
+        </tr>
+    {% endfor %}
+</table>
+    <form action="{% url 'add' %}" class="d-flex justify-content-center" >  
+        <button class = "btn btn-dark"> Add</button>
+    </form>
+{% endblock %}

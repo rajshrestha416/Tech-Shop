@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    Add
+{% endblock %}
+{% block content %}
+    <br><br>
+
+    <form id = "form" action = "{% url 'secondadd' %}" method="POST" class="d-flex justify-content-center" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class = "form">
+            ProductName
+            <div class="form-group">
+                {{form.ProductName}}    
+            </div>
+
+            Price
+            <div class="form-group">
+                {{form.Price}}
+            </div>
+
+            Description
+            <div class="form-group">
+                {{form.Description}}
+            </div>
+            
+            Used Details
+            <div class="form-group">
+                {{form.Used_Details}}
+            </div>
+            Image
+            <div class="form-group">
+                {{form.Image}}
+            </div>
+            <button class="btn btn-dark">Add</button>
+        </div>
+        
+    </form>
+    
+    <br><br>
+{% endblock %}

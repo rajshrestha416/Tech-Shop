@@ -23,7 +23,6 @@ var cpassword = document.getElementById("cpassword");
 
 form.addEventListener('submit'||'click' , (e)=> {
     checkInput();
-    console.log()
 });
 
 function checkInput()
@@ -34,9 +33,7 @@ function checkInput()
     const passwordValue = password.value.trim();
     const cpasswordValue = cpassword.value.trim();
     if(firstnameValue == ''){
-        firstname.addEventListener('blur' ,() => {   
         setErrorFor(firstname,'Please Fill the Firstname.')
-        });
     }
     else{
 

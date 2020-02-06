@@ -1,8 +1,7 @@
-// const firstImages = document.querySelector('.Image');
-// const secondImage = document.querySelector('.Image');
+var add = document.getElementById('add');
+var view = document.getElementById("view");
 
-// const prevBtn = document.querySelector('#prev');
-// const nextBtn = document.querySelector('#next');
+add.addEventListener('click', ()=> {
+    
+});
 
-// let counter = 1;
-// const size = Image[0].client;

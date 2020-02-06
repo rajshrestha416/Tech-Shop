@@ -38,7 +38,7 @@
                                     <a class = "nav-link text-dark" href="{% url 'secondhand' %}">Second Hand</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="About.html">About us</a>
+                                    <a class="nav-link text-dark" href="{% url 'aboutus' %}">About us</a>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li class="nav-item">

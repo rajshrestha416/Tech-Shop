@@ -71,6 +71,14 @@ body{
     vertical-align: inherit;
 }
 
+#CRUD #add{
+    margin-right: 10px !important;
+}
+
+#CRUD2 #add{
+    margin-right: 10px !important;
+}
+
 .Container h4{
     margin-left:5% !important;
 }
@@ -130,6 +138,7 @@ hr.line{
     border-radius: 10px;
     text-align: center;
 }
+
 
 
 .products img{

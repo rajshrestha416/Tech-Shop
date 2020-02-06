@@ -4,13 +4,17 @@
     Home
 {% endblock %}
 {% block content %}
+    <br>
+    <div class="d-flex justify-content-center" id="CRUD">
+        <button class="btn btn-dark" type="submit" id= 'view' onclick="location.href='view'">view</button>
+    </div>
+    
     <div class="Container">
         <h4> Trending Today </h4>
         <div class = "Trending container-fluid">
             <div class="Content">
                 
             </div>
-                
         </div>
         <br>
         <br>
@@ -18,7 +22,7 @@
         <h4> New Products</h4>
         <div class = "Products">
             {%for products in products %}
-            <div class="products" onclick="">
+            <div class="products" onclick="location.href='#'">
                 <img src = "{{products.Image.url}}" alt="product's Desc">
                 <p>{{products.ProductName}}</p>
                 <p> ${{products.Price}}</p>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}
+    Edit
+{% endblock %}
+{% block content %}
+    <br><br>
+
+    <div >
+
+        <form method="POST" action="{% url 'secondupdate' product_id %}" class="d-flex justify-content-center" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            {% load static %}
+            <!-- <div class="d-flex justify-content-center">
+                <img class="form-group" width="400" src="{{products.Image.url}}" >
+    
+            </div> -->
+    
+            <!-- <div class="form-group">
+                ProductName:
+                <input type="text" class="form-control" type="text" value="{{products.ProductName}}" name="ProductName" />
+    
+            </div>
+            
+            <div class="form-group">
+                Price:
+                <input type="text" class="form-control" value="{{products.Price}}" name="Price" />
+    
+            </div>
+            <div class="form-group">
+                Description:
+                <input type="text" class="form-control" value="{{products.Description}}" name="Description" />
+            </div>
+         
+            <div class="form-group">
+                Used Details:
+                <input type="text" class="form-control" value="{{products.Used_Details}}" name="Description" />
+            </div> -->
+            <div class = "form ">
+                <br>
+                ProductName
+                <div class="form-group">
+                    {{form.ProductName}}    
+                </div>
+    
+                <br>
+                Price
+                <div class="form-group">
+                    {{form.Price}}
+                </div>
+    
+                <br>
+                Description
+                <div class="form-group">
+                    {{form.Description}}
+                </div>
+                
+                <br>
+                Used Details
+                <div class="form-group">
+                    {{form.Used_Details}}
+                </div>
+
+                <br>
+                Image
+                <br>
+                <div class="form-group">
+                    {{form.Image}}
+                </div>
+
+                
+                <button  class="btn btn-dark" type="submit">Update</button>
+            </div>
+        </form>
+    
+    </div>
+
+    <br><br>
+{% endblock %}
