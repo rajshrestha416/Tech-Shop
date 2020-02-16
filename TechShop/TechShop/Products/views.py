@@ -76,7 +76,7 @@ def delete(request,id):
     products.delete()
     return redirect('view')
 
-
+##CRUD
 ## second hand part:
 
 def secondView(request, id):
@@ -121,6 +121,7 @@ def secondDelete(request,id):
 #search
 from django.utils.datastructures import MultiValueDictKeyError
 def search(request):
+    #Home Searching
     try:
         search = request.POST['search']
         products_list = Products.objects.filter(ProductName__icontains = search)
@@ -137,6 +138,7 @@ def search(request):
     return render(request, "Home.html", {'products': products})
 
 def secondhandSearch(request):
+    #Second Hand Searching 
     try:
         search = request.POST['search']
         sproducts_list = Secondhand.objects.filter(ProductName__icontains = search)
@@ -153,6 +155,8 @@ def secondhandSearch(request):
     return render(request, "SecondHand.html", {'secondhand': secondhand})
 
 def dscSort(request):
+    #sort
+    #Descending order by price 
     products_list = Products.objects.all().order_by('-Price')
     paginator = Paginator(products_list,6)
     page = request.GET.get('page') 
@@ -167,6 +171,8 @@ def dscSort(request):
     return render(request, "Home.html", {'products': products})
 
 def ascSort(request):
+    #Sort
+    #Ascending order by price
     products_list = Products.objects.all().order_by('Price')
     paginator = Paginator(products_list,6)
     page = request.GET.get('page') 
