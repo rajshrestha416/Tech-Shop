@@ -4,21 +4,56 @@
 {% endblock %}
 {% block content %}
 
-    <br><br>
-    <form class="d-flex justify-content-center" id="CRUD2" action="{% url 'secondview' user.id %}">
-        <button class="btn btn-dark">View</button>
-    </form>
+    <br>
 
+    <div class = "search" >
+        <form action="{% url 'secondhandsearch' %}" method="POST"  class = "d-flex justify-content-center" >
+            {% csrf_token %}
+            <input type="text" class = "search-box" placeholder="Search.." name="search">
+            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+        </form>
+    <div>
+    
+    <br><br>
     <div class="Container">
         <h4> Second Hand Devices </h4>
-            <div class = "Products">
-                {%for products in secondhand %}
-                <div class="products" onclick="location.href='#'">
+        <div class = "Products">
+            {%for products in secondhand %}
+            <a href="{% url 'S_transaction' products.id%}"class = "bg-color-dark">
+                <div class="products">
                     <img src = "{{products.Image.url}}" alt="product's Desc">
                     <p>{{products.ProductName}}</p>
                     <p> ${{products.Price}}</p>
                 </div>
-                {% endfor %} 
-            </div>
+            <a>
+            {% endfor %} 
+        </div>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            {% if secondhand.has_previous %}
+                <li class="page-item">
+                    <a href="?page={{products.previous_page_number}}" class=" page-link"> << </a> 
+                </li>
+            {% endif %}
+            
+            {% for num in secondhand.paginator.page_range %}
+                {% if secondhand.number == num %}
+                    <li class="page-item active">
+                        <a href="?page={{num}}" class=" page-link" >{{num}}</a>        
+                    </li>    
+                {% else %}
+                    <li class="page-item">
+                        <a href="?page={{num}}" class=" page-link">{{num}}</a>    
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {%if secondhand.has_next%}
+                <li class="page-item">
+                    <a href="?page={{ secondhand.next_page_number }}" class=" page-link"> >> </a>    
+                </li>
+            {% endif %}
+        </ul>    
     </div>
 {% endblock %}

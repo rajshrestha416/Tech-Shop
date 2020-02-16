@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+
+<form method="POST" action="{% url 'updateProfile' id %}" class="d-flex justify-content-center">
+    {% csrf_token %}
+    <div class = "form">
+        <br>
+        FirstName:
+        <input type="text" class="form-control" id="firstname" name = "firstname" value="{{form.firstname}}">    
+
+        <br>
+        LastName:
+            <input type="text" class="form-control" id="lastname" name = "lastname" value="{{form.lastname}}">
+            
+        <br>
+        Email:
+            <label type="text" class="form-control" id = "email" name = "email">{{form.email}}</label>
+        <br>
+
+        UserName
+        <input type="text" class="form-control" id="username" name = "username" value="{{form.username}}">
+                
+
+        <br>
+        Password
+        <input type="text" class="form-control" id="firstname" name = "password" value="{{form.password}}">
+
+        <br>
+
+        Confirm Password
+        <input type="text" class="form-control" id="firstname" name = "password">
+        <br>
+
+        <button  class="btn btn-dark">Save</button> 
+    </div>
+
+</form>   
+{% endblock %}

@@ -5,22 +5,29 @@
 {% endblock %}
 {% block content %}
     <div id = "login">
-        <h4>Login</h4>
-        <form id = "form" action="{% url 'login' %}" method="POST">
-
+        <br>
+        <form id = "form" action="{% url 'login' %}" method="POST" >
+            
+            <h4 class="d-flex justify-content-center">Login</h4>
+            <br>
             {% csrf_token %}
             <div class="form-group">
                 <label for = "username"> Username:</label>
                 <input type="text" class="form-control" placeholder="Enter Username" name="username">
             </div>
 
+            <br>
             <div class="form-group">
                 <label for = "pwd"> Password:</label>
                 <input type="password" class="form-control" placeholder="Enter Password" name="password">
             </div>
-            
-            <input type="submit" class = "btn btn-dark" name ="Login" value="Login">
-            <p>Don't have accout <a href="{% url 'register' %}">Create one</a> </p>
+
+            <br>
+            <div class="d-flex justify-content-center">
+                <input type="submit" class = "btn btn-dark" name ="Login" value="Login">
+            </div>
+            <br>
+            <p class="d-flex justify-content-center">Don't have an Account --> <a href="{% url 'register' %}"><strong>Create one</strong></a> </p>
             
         </form>
     </div>

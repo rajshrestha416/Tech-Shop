@@ -1,7 +1,11 @@
 body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
     color: #606060;
-    font-size: 16px;
+    font-size: 16px !important;
+}
+
+a{
+    color: #606060 !important;
 }
 .header-span span{
     text-align: center !important;
@@ -17,10 +21,8 @@ body{
     margin-right: 10%;
 }
 .navbar{
-    display: block;
     max-width: 90%;
     margin-left: 5%;
-    font-size: 20px !important;
     border-style: solid;
     border-width: 3px 0px 3px 0px;
     border-color: #E0E0E0;
@@ -28,22 +30,20 @@ body{
 .navbar-nav .nav-item a{    
     color: #606060 !important;
 }
-
-#login img{
-    max-width: 30px;
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 15px !important;
 }
 
-.navbar-expand .navbar-nav .nav-link{
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+#logo{
+    float: left;
 }
-
 #logo img{
     width: 100px;
 }
-
 .search-box{
-    width: 250px;
+    width: 300px;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -51,32 +51,23 @@ body{
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #9ab4ce;
-    border-radius: .25rem;
+    border-radius: 20px;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+.search button{
+    border-radius: 20px;
+    margin-left: -45px;
+} 
+
 .right{
-    margin-top: -55px;
-    float: right;
+    margin-left: 25%;
 }
 .row{
     display: block !important;
 }
-#search{
-    padding-top: 5px;
-}
-#search button{
-    margin-left:-45px ;
-}
+
 .nav-item button {
     vertical-align: inherit;
-}
-
-#CRUD #add{
-    margin-right: 10px !important;
-}
-
-#CRUD2 #add{
-    margin-right: 10px !important;
 }
 
 .Container h4{
@@ -144,26 +135,18 @@ hr.line{
 .products img{
     width: 100%;
     height: 75%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 2%;
     border-radius: 10px;
 }
 
+.carousel{
+    margin-left: 15% !important;
+}
 
-
-  /* animation
-  .Image{
-      display: flex;
-  }
-  .Image img{
-    height: 400px;
-    width: 100%;
-    max-width: 100%;
-  }
-.items{
-    width: 250px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-} */
 
 
 /* Login */
@@ -234,9 +217,6 @@ hr.line{
         max-width: 100%;
         margin: 0px;
     }
-    .navbar{
-        font-size: 18px !important;
-    }
 }
 
  @media screen and (max-width: 950px){
@@ -250,7 +230,6 @@ hr.line{
         margin-right: 2%;
         font-size: 18px !important;
     }
-
     .Products .products{
         width: 40%;
         margin-right: 5%;
@@ -258,24 +237,63 @@ hr.line{
     }
 }
 
+@media screen and (max-width: 600px){
+    .Products .products{
+        width: 70%;
+        margin-right: 15%;
+        margin-left: 15%;
+    } 
+    .carousel{
+        margin-left: 0!important;
+    }
+    .carousel-item img {
+        width: 100%;
+    }
 
-
-
-
-/*About Us*/
-/* #aboutus{
-    background-image: url(pic/AboutUs.jpg);
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    margin-top: 15px;
-    padding: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-} */
+}
 #aboutus{
     padding-left:10%;
     padding-right:10%;
     font-size: 20px !important;
 }
+
+.transaction-container{
+    padding: 30px;
+    width: 60%;
+    border-style: solid;
+    border-color: #606060;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.transaction-container img{
+    width: 40%;
+}
+
+button.btn.btn-dark.dropdown-toggle.sort {
+    margin-left: 5% !important;
+}
+
+.page-item.active .page-link{
+    color: #fff !important;
+}
+
+.paginator {
+    display: flow-root;
+}
+
+.pagination{
+    margin-top: 10%;
+    float: right;
+    margin-right: 10% !important;
+}
+
+
+/* animation */
+
+.Content img{
+    width: 100% ;
+    height: 100%;   
+}
+

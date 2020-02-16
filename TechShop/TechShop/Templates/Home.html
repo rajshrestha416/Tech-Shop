@@ -5,29 +5,108 @@
 {% endblock %}
 {% block content %}
     <br>
-    <div class="d-flex justify-content-center" id="CRUD">
-        <button class="btn btn-dark" type="submit" id= 'view' onclick="location.href='view'">view</button>
-    </div>
-    
+    <div class = "search" >
+        <form action="{% url 'search' %}" method="POST"  class = "d-flex justify-content-center" >
+            {% csrf_token %}
+            <input type="text" class = "search-box" placeholder="Search.." name="search">
+            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+        </form>
+    <div>
+
+    <br><br>
+
     <div class="Container">
         <h4> Trending Today </h4>
-        <div class = "Trending container-fluid">
-            <div class="Content">
-                
+        
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="{% static 'pic/back2.jpg' %}" alt="fourthImage" width="80%" height="400px">
+                        <div class="carousel-caption">
+                            <h3 class="text-secondary">Xiaomi Redmin K20 Pro</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'pic/headset.jpg' %}" alt="fourthImage" width="80%" height="400px">
+                        <div class="carousel-caption">
+                            <h3 class="text-secondary">Over-ear bluetooth wireless Headphone</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'pic/xbox.jpg' %}" alt="fourthImage" width="80%" height="400px">
+                        <div class="carousel-caption">
+                            <h3 class="text-secondary">Xbox 360</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'pic/item2.jpg' %}" alt="fourthImage" width="80%" height="400px">
+                        <div class="carousel-caption">
+                            <h3 class="text-secondary">Sony Smartwatch</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'pic/item4.jpg' %}" alt="fourthImage" width="80%" height="400px">
+                        <div class="carousel-caption">
+                            <h3 class="text-secondarys">Iphone 11 pro</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         <br>
         <br>
 
+        
         <h4> New Products</h4>
-        <div class = "Products">
-            {%for products in products %}
-            <div class="products" onclick="location.href='#'">
-                <img src = "{{products.Image.url}}" alt="product's Desc">
-                <p>{{products.ProductName}}</p>
-                <p> ${{products.Price}}</p>
+        <div class="dropdown" >
+            <button class="btn btn-dark dropdown-toggle sort" data-toggle="dropdown">
+                Order by Price
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownlink">
+              <a class="dropdown-item" href="{% url 'ascSort'%}">Ascending</a>
+              <a class="dropdown-item" href="{% url 'dscSort'%}">Descending</a>
             </div>
+        </div>
+        <br>
+        <div class = "Products">
+            {%for products in products.object_list %}
+                <a href="{% url 'transaction' products.id%}"class = "add">
+                    <div class="products">
+                        <img src = "{{products.Image.url}}" alt="product's Desc">
+                        <p>{{products.ProductName}}</p>
+                        <p> ${{products.Price}}</p>
+                    </div>
+                </a>
             {% endfor %} 
         </div>
+
+        <br>
+        <div class="paginator">
+            <ul class="pagination">
+                {% if products.has_previous %}
+                    <li class="page-item">
+                        <a href="?page={{products.previous_page_number}}" class=" page-link"> << </a> 
+                    </li>
+                {% endif %}
+                
+                {% for num in products.paginator.page_range %}
+                    {% if products.number == num %}
+                        <li class="page-item active">
+                            <a href="?page={{num}}" class=" page-link" >{{num}}</a>        
+                        </li>    
+                    {% else %}
+                        <li class="page-item">
+                            <a href="?page={{num}}" class=" page-link">{{num}}</a>    
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {%if products.has_next%}
+                    <li class="page-item">
+                        <a href="?page={{ products.next_page_number }}" class=" page-link"> >> </a>    
+                    </li>
+                {% endif %}
+            </ul>    
+        </div>
     </div>
+
 {% endblock %}

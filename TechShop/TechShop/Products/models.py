@@ -15,6 +15,7 @@ class Products(models.Model):
         self.Image.delete()
         super().delete(*args, **kwargs)
 
+
 class Secondhand(models.Model):
     ProductName = models.CharField(max_length = 50)
     Price = models.DecimalField(max_digits=7, decimal_places=2)
@@ -30,3 +31,7 @@ class Secondhand(models.Model):
     def delete(self, *args, **kwargs ):
         self.Image.delete()
         super().delete(*args, **kwargs)
+
+
+
+

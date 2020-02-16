@@ -3,4 +3,4 @@ from .models import Products, Secondhand
 # Register your models here.
 
 admin.site.register(Products)
-admin.site.register(Secondhand)
+admin.site.register(Secondhand) 
